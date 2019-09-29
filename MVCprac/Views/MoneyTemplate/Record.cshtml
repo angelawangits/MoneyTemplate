@@ -1,0 +1,30 @@
+﻿@using System.Threading
+@model List<MVCprac.Models.RecordViewModel>
+<div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>類別</th>
+                        <th>日期</th>
+                        <th>金額</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                @foreach (var item in Model)
+                    {
+                        <tr class="trans-history-entry-expand">
+                            <td class="record-id">@item.NumCount</td>
+                            <td class="record-category">@item.Category</td>
+                            <td class="record-date">@item.Date.ToString("yyyy MMMM dd")</td>
+                            <td class="record-amount">@item.Amount</td>
+                        </tr>
+                    }
+                </tbody>
+                <tr></tr>
+            </table>
+        </div>
+    </div>
+
